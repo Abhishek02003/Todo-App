@@ -52,22 +52,22 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto my-5 rounded-xl bg-violet-200 border-2 w-2xl mt-10 min-h-[80vh]">
+      <div className="container mx-auto my-5 rounded-xl bg-[#f7f0ff] md:w-[44vw] w-[80vw] mt-10 min-h-[80vh] shadow-2xl flex flex-col items-center">
 
         {/* TodoList heading */}
-        <h1 className="flex justify-center font-bold text-5xl mt-5">
+        <h1 className="flex justify-center font-bold text-5xl mt-5 pt-10 ">
           TodoList
         </h1>
          {/* TodoList heading*/}
 
-        <div className="flex justify-between mx-30 mt-10 items-center">
+        <div className="flex justify-center w-xl mt-10 items-center gap-5 ">
 
           {/* Text area and add button */}
           <div>
-            <input onChange={handlechange} value={todo} className="border border-black focus:outline-none bg-white w-80 " type="text" placeholder="Add todo here"/>
+            <input onChange={handlechange} value={todo} className="border focus:outline-none bg-white h-9 w-[35vw] rounded-md pl-3 border-amber-200 shadow-2xs" type="text" placeholder="Add todo here"/>
           </div>
           <div>
-            <button onClick={handleadd} className="cursor-pointer bg-blue-700 hover:bg-blue-900 text-white font-bold border rounded-md p-3 py-1">
+            <button onClick={handleadd} className="cursor-pointer bg-blue-700 hover:bg-blue-900 text-white font-bold border rounded-md p-3 py-2 px-4">
               Add
             </button>
             {/* Text area and add button */}
@@ -79,16 +79,16 @@ function App() {
 
 
 
-        <h2 className="text-lg font-bold">Your Todos</h2>
+        <h2 className="text-lg font-bold mt-10">Your Todos</h2>
 
 
 
 
-        <div className="todos">
+        <div className="todos flex justify-center">
           {todos.map((item) => {
             return (
-              <div key={item.id} className="todo flex justify-between mx-30 mt-10">
-                <input onChange={() => handlecheckbox(item.id)} type="checkbox" value={item.isCompleted}/>
+              <div key={item.id} className="todo flex justify-between items-center mt-10 border border-amber-600 rounded-md w-[40vw] h-15 p-3">
+                <input className="w-4 h-4 border rounded-2xl" onChange={() => handlecheckbox(item.id)} type="checkbox" value={item.isCompleted}/>
                 <div className={item.iscompleted ? "line-through" : ""}>
                   {item.todo}
                 </div>
