@@ -64,7 +64,7 @@ function App() {
 
           {/* Text area and add button */}
           <div>
-            <input onChange={handlechange} value={todo} className="border focus:outline-none bg-white h-9 w-[35vw] rounded-md pl-3 border-amber-200 shadow-2xs" type="text" placeholder="Add todo here"/>
+            <input onChange={handlechange} value={todo} className="border focus:outline-none bg-white h-9 md:w-[35vw] w-[50w] rounded-md pl-3 border-amber-200 shadow-2xs" type="text" placeholder="Add todo here"/>
           </div>
           <div>
             <button onClick={handleadd} className="cursor-pointer bg-blue-700 hover:bg-blue-900 text-white font-bold border rounded-md p-3 py-2 px-4">
@@ -87,7 +87,7 @@ function App() {
         <div className="todos flex justify-center flex-col">
           {todos.map((item) => {
             return (
-              <div key={item.id} className="todo flex justify-between items-center mt-10 border border-amber-600 rounded-md w-[40vw] h-15 p-3">
+              <div key={item.id} className="todo flex justify-between items-center mt-10 border border-amber-600 rounded-md md:w-[40vw] w-[70vw] h-15 p-3">
                 <input className="w-4 h-4 border rounded-2xl" onChange={() => handlecheckbox(item.id)} type="checkbox" value={item.isCompleted}/>
                 <div className={item.iscompleted ? "line-through" : ""}>
                   {item.todo}
