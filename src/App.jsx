@@ -88,12 +88,12 @@ function App() {
 
 
 
-        <div className="todos flex justify-center flex-col">
+        <div className="todos flex justify-center flex-col ">
           {todos.map((item) => {
             return (
-              <div key={item.id} className="todo flex justify-between items-center my-5 border border-amber-600 rounded-md xl:w-[40vw] w-[70vw] h-15 p-3">
+              <div key={item.id} className="todo flex justify-between items-center my-5 border border-amber-600 rounded-md xl:w-[40vw] w-[70vw] h-15 p-3 gap-2">
                 <input className="w-4 h-4 border rounded-2xl" onChange={() => handlecheckbox(item.id)} type="checkbox" value={item.isCompleted}/>
-                <div className={item.iscompleted ? "line-through" : ""}>
+                <div className={`${item.iscompleted ? "line-through" : ""} overflow-scroll`} >
                   {item.todo}
                 </div>
                 <div className="buttons flex gap-2">
