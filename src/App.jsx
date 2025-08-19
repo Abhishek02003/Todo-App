@@ -84,7 +84,7 @@ function App() {
 
 
 
-        <div className="todos flex justify-center">
+        <div className="todos flex justify-center flex-col">
           {todos.map((item) => {
             return (
               <div key={item.id} className="todo flex justify-between items-center mt-10 border border-amber-600 rounded-md w-[40vw] h-15 p-3">
